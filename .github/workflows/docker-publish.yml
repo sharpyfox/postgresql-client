@@ -11,7 +11,7 @@ on:
   push:
     branches: [ "master" ]
     # Publish psql version tags as releases.
-    tags: [ '*.*' ]
+    tags: [ 'v*.*.*' ]
   pull_request:
     branches: [ "master" ]
 
@@ -59,7 +59,6 @@ jobs:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           # set latest tag for default branch
           tags: |
-            type=semver,pattern={{version}}
             type=semver,pattern={{major}}.{{minor}}
             type=raw,value=latest,enable={{is_default_branch}}
 

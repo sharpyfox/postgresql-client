@@ -6,8 +6,6 @@ name: Docker
 # documentation.
 
 on:
-  schedule:
-    - cron: '41 1 * * *'
   push:
     branches: [ "master" ]
     # Publish psql version tags as releases.
